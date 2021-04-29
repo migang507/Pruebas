@@ -3,7 +3,7 @@ include "../db/db_con.php";
 require_once( "../models/model_productos.php");
 $prod=new model_productos();
 
-if(isset($_POST['crud']))
+if(isset($_POST['crud']) || isset($_GET['crud']))
 {
     if($_POST['crud']==1)
     {
@@ -63,6 +63,7 @@ if(isset($_POST['crud']))
     {
         if($_GET['id']!= null)
         {
+         $id=$_GET['id'];   
          $sql =  "DELETE FROM productos WHERE id = '$id'";
          $confirmacion=$prod->query_upd_inser_del($sql);
         if($confirmacion)
