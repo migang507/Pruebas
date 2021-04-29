@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Productos</title>
+    </head>
+    <body>
+        <main class="container">
+            <table border="1" align="center">
+                <thead>
+                    <tr>
+                        <th scope="col">id:</th>
+                        <th scope="col">Nombre de producto:</th>
+                        <th scope="col">referencia:</th>
+                        <th scope="col">precio:</th>
+                        <th scope="col">peso:</th>
+                        <th scope="col">categoria:</th>
+                        <th scope="col">stock:</th>
+                        <th scope="col">Fecha de creación:</th>
+                        <th scope="col">Fecha de venta:</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody><?php
+                    foreach ($result as $value){ ?>
+                    <tr>
+                        <th scope="row"><?php echo $value['id'] ?></td>
+                        <td><?php echo $value['nombre_producto'] ?></td>
+                        <td><?php echo $value['referencia'] ?></td>
+                        <td><?php echo $value['precio'] ?></td>
+                        <td><?php echo $value['peso'] ?></td>
+                        <td><?php echo $value['categoria'] ?></td>
+                        <td><?php echo $value['stock'] ?></td>
+                        <td><?php echo $value['fecha_creacion'] ?></td>
+                        <td><?php echo $value['fecha_ultim_venta'] ?></td>
+                        <td ><a name="id" href="../controllers/controller_edit_productos.php?id=<?php echo $value['id'] ?>&crud=2">Editar</a></td>
+                        <td ><a name="id" href="../controllers/controller_get.php?id=<?php echo $value['id'] ?>&crud=3">Eliminar</a></td>
+                    </tr>
+                <?php
+                } ?>
+                <tr><a name="id"  href="views/productos_crear.php?crud=1">Crear producto</a></tr>
+                           
+                </tbody>
+       
+    </body>
+</html>

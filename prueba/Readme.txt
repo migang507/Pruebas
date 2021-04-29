@@ -1,0 +1,1 @@
+El ejercicio fue realizado en un servidor 000webhost.com personal. la configuracion de la bd esta en la carpeta db de la carpeta prueba. envio la estructura de la base de datos.
