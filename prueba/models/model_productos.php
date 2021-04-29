@@ -9,7 +9,7 @@ class model_productos{
     }
     
     public function read_query($campos,$tabla, $condicion){
-        $resultado = $this->db->query("SELECT $campos FROM $tabla $condicion") or die($this->conn->error);
+        $resultado = $this->db->query("SELECT $campos FROM $tabla $condicion") or die($this->db->error);
         if($resultado)
             return $resultado->fetch_all(MYSQLI_ASSOC);
         return false;
@@ -21,7 +21,7 @@ class model_productos{
         return $var;
     }
     public function query_upd_inser_del($query){
-        $resultado = $this->db->query(" $query ") or die($this->conn->error);
+        $resultado = $this->db->query(" $query ") or die($this->db->error);
         if($resultado)
             return true;
         return false;
