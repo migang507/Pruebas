@@ -1,6 +1,7 @@
 <?php
+include "../db/db_con.php";
 require_once( "../models/model_productos.php");
-$prod2=new model_productos();
+$prod=new model_productos();
 
 if(isset($_POST['crud']))
 {
@@ -16,7 +17,7 @@ if(isset($_POST['crud']))
         $stock=$_POST['stock'];
         $fecha_creacion=$_POST['fecha_creacion'];
         $fecha_ult_vent=$_POST['fecha_ult_vent'];
-         $sql = "INSERT INTO productos (nombre_producto,referencia,precio,peso,categoria,stock,fecha_creacion	fecha_ultim_venta) VALUES ('".$nombre. "','".$ref."','".$precio."','".$peso."','".$categoria."','".$stock."','".$fecha_creacion."','".$fecha_ult_vent."')";
+         $sql = "INSERT INTO productos (nombre_producto,referencia,precio,peso,categoria,stock,fecha_creacion,fecha_ultim_venta) VALUES ('".$nombre. "','".$ref."','".$precio."','".$peso."','".$categoria."','".$stock."','".$fecha_creacion."','".$fecha_ult_vent."')";
        $confirmacion=$prod->query_upd_inser_del($sql);
         if($confirmacion)
         {
