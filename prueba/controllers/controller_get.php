@@ -44,7 +44,7 @@ if(isset($_POST['crud']))
         $stock=$_POST['stock'];
         $fecha_creacion=$_POST['fecha_creacion'];
         $fecha_ult_vent=$_POST['fecha_ult_vent'];
-        $sql = "UPDATE productos SET nombre_producto = '" .$nombre . "' ,referencia = '" .$ref."' ,precio = '".$precio."' ,peso= '".$peso."' ,categoria='".$categoria."',stock='".$stock."',fecha_creacion='".$fecha_creacion."', fecha_ultim_venta='".$fecha_u."' WHERE id = '" . $id . "'";
+        $sql = "UPDATE productos SET nombre_producto = '" .$nombre . "' ,referencia = '" .$ref."' ,precio = '".$precio."' ,peso= '".$peso."' ,categoria='".$categoria."',stock='".$stock."',fecha_creacion='".$fecha_creacion."', fecha_ultim_venta='".$fecha_ult_vent."' WHERE id = '" . $id . "'";
         
         $confirmacion=$prod->query_upd_inser_del($sql);
         if($confirmacion)
